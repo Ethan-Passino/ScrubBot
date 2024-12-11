@@ -1,45 +1,27 @@
 {
-  "name": "scrubbot",
-  "version": "0.8.9",
-  "description": "A bot with many commands.",
-  "main": "node server.js",
+  "name": "scrubbot-main",
+  "version": "1.0.0",
+  "description": "ScrubBot is a multi purpose discord bot!",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "12.x"
-  },
-  "repository": {
-    "url": "https://turtlesquad.tk/"
-  },
-  "author": "TurtlesAreHot (Tc)",
-  "license": "NONE",
-  "homepage": "https://turtlesquad.tk/",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "better-sqlite-pool": "^0.3.0",
-    "better-sqlite3": "^7.1.2",
-    "bindings": "^1.5.0",
-    "blocked-at": "^1.2.0",
-    "bufferutil": "^4.0.3",
     "child_process": "^1.0.2",
     "data-store": "^4.0.3",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7",
     "enmap": "^5.8.3",
-    "erlpack": "^0.1.3",
-    "es6-set": "^0.1.5",
-    "express": "^4.17.1",
-    "fs": "^0.0.2",
-    "libsodium-wrappers": "^0.7.8",
-    "moment-timezone": "^0.5.32",
+    "es6-set": "^0.1.6",
+    "moment-timezone": "^0.5.46",
     "ms": "^2.1.3",
-    "node-gyp": "^7.1.2",
-    "nodemon": "^2.0.7",
-    "process": "^0.11.10",
-    "replace": "^1.2.0",
-    "snekfetch": "^4.0.4",
-    "sqlite": "^4.0.19",
+    "replace": "^1.2.2",
+    "sql": "^0.78.0",
+    "sqlite": "^5.1.1",
     "xmlhttprequest": "^1.8.0",
-    "ytdl-core": "^4.4.5",
-    "discord.js": "^12.5.1"
+    "ytdl-core": "^4.11.5"
   }
 }

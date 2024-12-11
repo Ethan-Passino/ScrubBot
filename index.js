@@ -1,3 +1,5 @@
+const process = require("process");
+require('dotenv').config();
 const Discord = require("discord.js"); //This requires discord js into the bot. This is REQUIRED.
 var replace = require("replace");
 const moment = require("moment-timezone");
@@ -9,16 +11,19 @@ const leveling = require("data-store") ({path: "leveling/points.json"});
 
 
 const sql = require("sqlite"); //Require the NPM sqlite
-const proces = require("process");
 const cp = require("child_process");
 const fs = require("fs");
-const Enmap = require("enmap");
+const Enmap = require('enmap');
+//import Enmap from 'enmap';
 const Set = require("es6-set");
 const ms = require("ms");
 const YTDL = require("ytdl-core");
 const TOKEN = process.env.TOKEN; //This is the token for the bot that is required to login to the bot.
 const PREFIX = ">"; //This is the prefix of the bot that will trigger it to run commands with the text that is after it.
-var bot = new Discord.Client(); //Basically starts the bot;
+var bot = new Discord.Client({ intents: [
+  Discord.GatewayIntentBits.Guilds,
+  Discord.GatewayIntentBits.GuildMessages
+]}); //Basically starts the bot;
 const version = "0.7";
 //sql.open("score.sqlite");
 bot.points = new Enmap({name: "points"});
@@ -454,7 +459,6 @@ function getTime()
 
 let client = bot;
 bot.on("ready", function() {
-  var g = new RichEmbedewqweeqw();
   console.log("ScrubBot Reloaded has started on version " + version);
   bot.user.setActivity('>help', { type: 'LISTENING' });
 });
@@ -699,7 +703,7 @@ bot.on("roleUpdate", (oldRole, newRole) => {
 });
 
 
-bot.on("message", message => {
+bot.on("messageCreate", message => {
   var guild = message.guild;
   if (message.author.bot) return;
  
